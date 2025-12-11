@@ -71,10 +71,10 @@ single-parameter reconstruction of a matrix permanent.
 
 This script:
 
-1. Generates a \(q\)-ary order-1 Reed–Muller code \(\mathrm{RM}_q(1, m)\);
+1. Generates a q-ary order-1 Reed–Muller code RM_q(1, m);
 2. Uses RM codewords as phase-encoding patterns;
 3. Recovers modular phase exponents by solving a constrained linear
-   system over \(\mathbb{Z}_q\);
+   system over Z_q;
 4. Applies column-wise phase perturbations to the matrix;
 5. Reconstructs the permanent from a 1-parameter linear model and
    compares it with the exact Ryser permanent.
@@ -110,7 +110,7 @@ This script:
 - computes the encoded statistic and Laplace-based approximation for
   the same samples;
 - fits a low-degree polynomial (typically quadratic) that maps the
-  encoded statistic \(r\) to an estimate \(\rho(r)\) of the permanent;
+  encoded statistic r to an estimate rho(r) of the permanent;
 - evaluates accuracy via error statistics and correlation measures.
 
 It is used to compare:
@@ -145,7 +145,7 @@ The main outputs are numerical results and figures.
 
 - **Figures** (stored in `results/`)  
 
-  For each dimension \(N \in \{11, 15, 20\}\) we typically produce:
+  For each dimension N {11, 15, 20} we typically produce:
 
   - `*_dis.bmp` – distribution plots  
     (e.g. histograms of reconstructed vs exact permanents, or error
@@ -157,9 +157,9 @@ The main outputs are numerical results and figures.
 
 Concretely:
 
-- `dim11_dis.bmp`, `dim11_cor.bmp`, `dim11_err.bmp` – results for \(N=11\);  
-- `dim15_dis.bmp`, `dim15_cor.bmp`, `dim15_err.bmp` – results for \(N=15\);  
-- `dim20_dis.bmp`, `dim20_cor.bmp`, `dim20_err.bmp` – results for \(N=20\).
+- `dim11_dis.bmp`, `dim11_cor.bmp`, `dim11_err.bmp` – results for (N=11);  
+- `dim15_dis.bmp`, `dim15_cor.bmp`, `dim15_err.bmp` – results for (N=15);  
+- `dim20_dis.bmp`, `dim20_cor.bmp`, `dim20_err.bmp` – results for (N=20).
 
 These figures should be reproducible by running the corresponding
 scripts.
@@ -169,7 +169,7 @@ scripts.
 ## Example Console Output (N = 20)
 
 A typical run of the encoded permanent + Laplace approximation for
-dimension \(N = 20\) with 100 samples produces output similar to:
+dimension N = 20 with 100 samples produces output similar to:
 
 ```text
 Computing true permanent (Ryser): sample 10 / 100
@@ -200,12 +200,12 @@ R^2 for quadratic fit (A^T) = 0.999064
 
 This illustrates that, in this configuration:
 
-- exact Ryser computation for 100 samples at \(N = 20\) takes about
+- exact Ryser computation for 100 samples at N = 20 takes about
   **851 seconds**;
 - the encoded + Laplace approximation for the same samples takes about
   **0.81 seconds**;
 - the calibrated estimator achieves **sub-percent relative error**
-  with \(R^2 \approx 0.999\) for the quadratic fit.
+  with R^2 approx 0.999 for the quadratic fit.
 
 ---
 
