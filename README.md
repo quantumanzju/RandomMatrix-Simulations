@@ -125,19 +125,22 @@ It is used to compare:
 
 ### Input
 
-The primary logical input is the **matrix** whose permanent is to be
-approximated. Depending on the script:
+The primary logical input to the algorithms is the **matrix** whose
+permanent is to be computed or approximated. Depending on the script:
 
-- matrices may be **generated internally** (e.g. random ensembles), or  
-- loaded from text files such as `dim11.txt`, `dim15.txt`, `dim20.txt`.
+- matrices may be **generated internally** (e.g. random matrix ensembles); or  
+- read from user-provided files (if you adapt the scripts to load
+  external data).
 
-If you use the `.txt` files as inputs, please check the script headers
-for the precise format (dimension, number of samples, etc.). Typically,
-each file corresponds to a fixed dimension (11, 15, or 20).
+The text files `dim11.txt`, `dim15.txt`, `dim20.txt` in the `data/`
+folder are **example numerical data produced by our experiments**
+(intermediate or auxiliary results), **not** generic input matrices to
+be plugged into the scripts as-is. Please check the headers or comments
+in each script to see exactly how (and whether) these files are used.
 
 ### Output
 
-The main outputs are numerical results and figures.
+The main outputs of the experiments are numerical results and figures.
 
 - **Text outputs**  
   Intermediate numerical results may be written to `.txt` files in
@@ -145,7 +148,7 @@ The main outputs are numerical results and figures.
 
 - **Figures** (stored in `results/`)  
 
-  For each dimension N {11, 15, 20} we typically produce:
+  For each dimension N ∈ {11, 15, 20} we typically produce:
 
   - `*_dis.bmp` – distribution plots  
     (e.g. histograms of reconstructed vs exact permanents, or error
@@ -157,12 +160,12 @@ The main outputs are numerical results and figures.
 
 Concretely:
 
-- `dim11_dis.bmp`, `dim11_cor.bmp`, `dim11_err.bmp` – results for (N=11);  
-- `dim15_dis.bmp`, `dim15_cor.bmp`, `dim15_err.bmp` – results for (N=15);  
-- `dim20_dis.bmp`, `dim20_cor.bmp`, `dim20_err.bmp` – results for (N=20).
+- `dim11_dis.bmp`, `dim11_cor.bmp`, `dim11_err.bmp` – results for (N = 11);  
+- `dim15_dis.bmp`, `dim15_cor.bmp`, `dim15_err.bmp` – results for (N = 15);  
+- `dim20_dis.bmp`, `dim20_cor.bmp`, `dim20_err.bmp` – results for (N = 20).
 
 These figures should be reproducible by running the corresponding
-scripts.
+scripts with the same configuration.
 
 ---
 
@@ -205,7 +208,7 @@ This illustrates that, in this configuration:
 - the encoded + Laplace approximation for the same samples takes about
   **0.81 seconds**;
 - the calibrated estimator achieves **sub-percent relative error**
-  with R^2 approx 0.999 for the quadratic fit.
+  with R² ≈ 0.999 for the quadratic fit.
 
 ---
 
@@ -335,8 +338,8 @@ original copyright notice is retained.
 If you use this code or the accompanying results in your research, please
 cite the paper and optionally this repository, for example:
 
-
+```
 J. Fu, "Phase-Encoded Exact and Approximate Computation of Matrix Permanents:
 A Sequence-Algebraic Perspective", arXiv:submit/7070346.
 Code available at: https://github.com/quantumanzju/RandomMatrix-Simulations
-
+```
