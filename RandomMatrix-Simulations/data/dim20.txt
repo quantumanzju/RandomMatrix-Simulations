@@ -1,0 +1,36 @@
+﻿Computing true permanent (Ryser): sample 10 / 100
+Computing true permanent (Ryser): sample 20 / 100
+Computing true permanent (Ryser): sample 30 / 100
+Computing true permanent (Ryser): sample 40 / 100
+Computing true permanent (Ryser): sample 50 / 100
+Computing true permanent (Ryser): sample 60 / 100
+Computing true permanent (Ryser): sample 70 / 100
+Computing true permanent (Ryser): sample 80 / 100
+Computing true permanent (Ryser): sample 90 / 100
+Computing true permanent (Ryser): sample 100 / 100
+Ryser exact computation time: 850.9701 seconds
+Encoded permanent + Laplace: sample 10 / 100
+Encoded permanent + Laplace: sample 20 / 100
+Encoded permanent + Laplace: sample 30 / 100
+Encoded permanent + Laplace: sample 40 / 100
+Encoded permanent + Laplace: sample 50 / 100
+Encoded permanent + Laplace: sample 60 / 100
+Encoded permanent + Laplace: sample 70 / 100
+Encoded permanent + Laplace: sample 80 / 100
+Encoded permanent + Laplace: sample 90 / 100
+Encoded permanent + Laplace: sample 100 / 100
+Fast encoded approximation time: 0.8098 seconds
+Dimension N = 20, calibrated coefficients (quadratic in r):
+  For A   :  rho ~ 222.455356 * r^2 + -464.280948 * r + 242.826342
+  For A^T :  rho ~ 222.455356 * r^2 + -464.280948 * r + 242.826342
+Combine A and A^T (simple average)
+=== Error statistics for combined calibrated estimator (A & A^T) ===
+RMSE      = 0.1391 %
+MAE       = 0.1059 %
+MaxAE     = 0.5296 %
+Std(error)= 0.1146 %
+--- Correlation and R^2 between r and rho (N = 20) ---
+corr(r(A),  rho(A))      = -0.995322
+corr(r(A^T),rho(A^T))    = -0.998376
+R^2 for quadratic fit (A)   = 0.998691
+R^2 for quadratic fit (A^T) = 0.999064

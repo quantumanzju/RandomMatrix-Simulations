@@ -1,0 +1,4 @@
+﻿import numpy as np
+import itertools
+import time
+import matplotlib.pyplot as plt
