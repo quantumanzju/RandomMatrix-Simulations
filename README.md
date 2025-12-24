@@ -7,8 +7,6 @@ matrix permanents using Reed–Muller (RM) based phase encoding and
 Laplace-based approximations. It implements the experiments described in
 Sections 3–4 of:
 
-> Jian Fu, “Phase-Encoded Exact and Approximate Computation of Matrix
-> Permanents: A Sequence-Algebraic Perspective”, arXiv:submit/7070346.
 
 In brief, the code supports:
 
@@ -339,7 +337,5 @@ If you use this code or the accompanying results in your research, please
 cite the paper and optionally this repository, for example:
 
 ```
-J. Fu, "Phase-Encoded Exact and Approximate Computation of Matrix Permanents:
-A Sequence-Algebraic Perspective", arXiv:submit/7070346.
 Code available at: https://github.com/quantumanzju/RandomMatrix-Simulations
 ```
