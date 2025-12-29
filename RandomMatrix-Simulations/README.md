@@ -1,12 +1,12 @@
-﻿# Reed–Muller Based Phase Encoding for Permanent Reconstruction
+# RandomMatrix-Simulations
+Reed–Muller based phase-encoded exact and approximate computation of matrix permanents
+# Reed–Muller Based Phase Encoding for Permanent Reconstruction
 
 This repository contains code and numerical experiments for reconstructing
 matrix permanents using Reed–Muller (RM) based phase encoding and
 Laplace-based approximations. It implements the experiments described in
 Sections 3–4 of:
 
-> Jian Fu, “Phase-Encoded Exact and Approximate Computation of Matrix
-> Permanents: A Sequence-Algebraic Perspective”, arXiv:submit/7070346.
 
 In brief, the code supports:
 
@@ -69,10 +69,10 @@ single-parameter reconstruction of a matrix permanent.
 
 This script:
 
-1. Generates a \(q\)-ary order-1 Reed–Muller code \(\mathrm{RM}_q(1, m)\);
+1. Generates a q-ary order-1 Reed–Muller code RM_q(1, m);
 2. Uses RM codewords as phase-encoding patterns;
 3. Recovers modular phase exponents by solving a constrained linear
-   system over \(\mathbb{Z}_q\);
+   system over Z_q;
 4. Applies column-wise phase perturbations to the matrix;
 5. Reconstructs the permanent from a 1-parameter linear model and
    compares it with the exact Ryser permanent.
@@ -108,7 +108,7 @@ This script:
 - computes the encoded statistic and Laplace-based approximation for
   the same samples;
 - fits a low-degree polynomial (typically quadratic) that maps the
-  encoded statistic \(r\) to an estimate \(\rho(r)\) of the permanent;
+  encoded statistic r to an estimate rho(r) of the permanent;
 - evaluates accuracy via error statistics and correlation measures.
 
 It is used to compare:
@@ -123,19 +123,22 @@ It is used to compare:
 
 ### Input
 
-The primary logical input is the **matrix** whose permanent is to be
-approximated. Depending on the script:
+The primary logical input to the algorithms is the **matrix** whose
+permanent is to be computed or approximated. Depending on the script:
 
-- matrices may be **generated internally** (e.g. random ensembles), or  
-- loaded from text files such as `dim11.txt`, `dim15.txt`, `dim20.txt`.
+- matrices may be **generated internally** (e.g. random matrix ensembles); or  
+- read from user-provided files (if you adapt the scripts to load
+  external data).
 
-If you use the `.txt` files as inputs, please check the script headers
-for the precise format (dimension, number of samples, etc.). Typically,
-each file corresponds to a fixed dimension (11, 15, or 20).
+The text files `dim11.txt`, `dim15.txt`, `dim20.txt` in the `data/`
+folder are **example numerical data produced by our experiments**
+(intermediate or auxiliary results), **not** generic input matrices to
+be plugged into the scripts as-is. Please check the headers or comments
+in each script to see exactly how (and whether) these files are used.
 
 ### Output
 
-The main outputs are numerical results and figures.
+The main outputs of the experiments are numerical results and figures.
 
 - **Text outputs**  
   Intermediate numerical results may be written to `.txt` files in
@@ -143,7 +146,7 @@ The main outputs are numerical results and figures.
 
 - **Figures** (stored in `results/`)  
 
-  For each dimension \(N \in \{11, 15, 20\}\) we typically produce:
+  For each dimension N ∈ {11, 15, 20} we typically produce:
 
   - `*_dis.bmp` – distribution plots  
     (e.g. histograms of reconstructed vs exact permanents, or error
@@ -155,19 +158,19 @@ The main outputs are numerical results and figures.
 
 Concretely:
 
-- `dim11_dis.bmp`, `dim11_cor.bmp`, `dim11_err.bmp` – results for \(N=11\);  
-- `dim15_dis.bmp`, `dim15_cor.bmp`, `dim15_err.bmp` – results for \(N=15\);  
-- `dim20_dis.bmp`, `dim20_cor.bmp`, `dim20_err.bmp` – results for \(N=20\).
+- `dim11_dis.bmp`, `dim11_cor.bmp`, `dim11_err.bmp` – results for (N = 11);  
+- `dim15_dis.bmp`, `dim15_cor.bmp`, `dim15_err.bmp` – results for (N = 15);  
+- `dim20_dis.bmp`, `dim20_cor.bmp`, `dim20_err.bmp` – results for (N = 20).
 
 These figures should be reproducible by running the corresponding
-scripts.
+scripts with the same configuration.
 
 ---
 
 ## Example Console Output (N = 20)
 
 A typical run of the encoded permanent + Laplace approximation for
-dimension \(N = 20\) with 100 samples produces output similar to:
+dimension N = 20 with 100 samples produces output similar to:
 
 ```text
 Computing true permanent (Ryser): sample 10 / 100
@@ -198,12 +201,12 @@ R^2 for quadratic fit (A^T) = 0.999064
 
 This illustrates that, in this configuration:
 
-- exact Ryser computation for 100 samples at \(N = 20\) takes about
+- exact Ryser computation for 100 samples at N = 20 takes about
   **851 seconds**;
 - the encoded + Laplace approximation for the same samples takes about
   **0.81 seconds**;
 - the calibrated estimator achieves **sub-percent relative error**
-  with \(R^2 \approx 0.999\) for the quadratic fit.
+  with R² ≈ 0.999 for the quadratic fit.
 
 ---
 
@@ -333,8 +336,6 @@ original copyright notice is retained.
 If you use this code or the accompanying results in your research, please
 cite the paper and optionally this repository, for example:
 
-
-J. Fu, "Phase-Encoded Exact and Approximate Computation of Matrix Permanents:
-A Sequence-Algebraic Perspective", arXiv:submit/7070346.
+```
 Code available at: https://github.com/quantumanzju/RandomMatrix-Simulations
-
+```
